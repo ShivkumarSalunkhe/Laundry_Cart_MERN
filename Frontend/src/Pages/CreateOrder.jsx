@@ -40,7 +40,7 @@ function CreateOrder() {
     console.log(newOrder);
     try {
       const headers = { "Authorization": `Bearer ${sessionStorage.getItem("token")}` }
-      const res = await axios.post("https://laundry-cart-mern.onrender.com/orders/create", [newOrder, orderDetails], { headers })
+      const res = await axios.post("https://laundry-cart-mern-dydz.onrender.com/orders/create", [newOrder, orderDetails], { headers })
       //console.log(res);
     } catch (error) {
       //console.log(error);

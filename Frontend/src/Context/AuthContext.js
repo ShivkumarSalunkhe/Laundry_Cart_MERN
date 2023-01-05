@@ -25,7 +25,7 @@ export const AuthContextProvider = ({ children }) => {
       
         try {
             const headers = { "Authorization": `Bearer ${sessionStorage.getItem("token")}` }
-            const res = await axios.post("https://laundry-cart-mern.onrender.com/users/isLoggedIn", null, { headers })
+            const res = await axios.post("https://laundry-cart-mern-dydz.onrender.com/users/isLoggedIn", null, { headers })
             setUser(res.data)
 
             if (location.pathname === "/" || location.pathname === "/signup") {
@@ -47,7 +47,7 @@ export const AuthContextProvider = ({ children }) => {
 
         try {
             //console.log(UserDetails);
-            const res = await axios.post("https://laundry-cart-mern.onrender.com/users/login", UserDetails)
+            const res = await axios.post("https://laundry-cart-mern-dydz.onrender.com/users/login", UserDetails)
             setUser(res.data.user)
             //console.log(res);
             toast.success(`Hello ${res.data.user.name}`)
@@ -64,7 +64,7 @@ export const AuthContextProvider = ({ children }) => {
 
         try {
             //console.log(UserDetails);
-            const res = await axios.post("https://laundry-cart-mern.onrender.com/users/signup", UserDetails)
+            const res = await axios.post("https://laundry-cart-mern-dydz.onrender.com/users/signup", UserDetails)
             //console.log(res);
             toast.success("User Registered Successfully")
             navigate("/",{replace:true})

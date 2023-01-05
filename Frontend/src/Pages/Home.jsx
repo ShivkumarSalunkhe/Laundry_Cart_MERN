@@ -49,7 +49,7 @@ function Home() {
   const getOrders = async () => {
     try {
       const headers = { "Authorization": `Bearer ${sessionStorage.getItem("token")}` }
-      const res = await axios.post("https://laundry-cart-mern.onrender.com/orders/get-Orders", null, { headers })
+      const res = await axios.post("https://laundry-cart-mern-dydz.onrender.com/orders/get-Orders", null, { headers })
 
       setOrders(res.data)
     } catch (error) {
@@ -65,7 +65,7 @@ function Home() {
     }
     try {
       const headers = { "Authorization": `Bearer ${sessionStorage.getItem("token")}` }
-      const res = await axios.put(`https://laundry-cart-mern.onrender.com/orders/cancel/${id}`, null, { headers })
+      const res = await axios.put(`https://laundry-cart-mern-dydz.onrender.com/orders/cancel/${id}`, null, { headers })
       getOrders()
       setCancelid()
       setFiltered([])
